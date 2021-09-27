@@ -4,19 +4,38 @@ public class LinkedBag<T> implements BagInterface<T>
     private Node<T> firstNode;
     private int numberOfEntries;
 
+    /**
+     * constructor initializes an empty bag
+     */
     public LinkedBag()
     {
         firstNode = null;
         numberOfEntries = 0;
     }
+
+    /**
+     * determines current size of bag
+     * @return number of entries in this bag
+     */
     public int getCurrentSize()
     {
         return numberOfEntries;
     }
+
+    /**
+     * determines whether or not this is an empty bag
+     * @return True if this is an empty bag, false otherwise
+     */
     public boolean isEmpty()
     {
         return numberOfEntries == 0;
     }
+
+    /**
+     * adds new entry to this bag
+     * @param newEntry the data to be added
+     * @return True if successfully added to bag, false  otherwise
+     */
     public boolean add(T newEntry)
     {
         if (isArrayFull())
@@ -28,6 +47,10 @@ public class LinkedBag<T> implements BagInterface<T>
         return true;
     }
 
+    /**
+     * removes whatever the first entry in the bag is
+     * @return data removed
+     */
     public T remove()
     {
         T result = null;
@@ -40,6 +63,11 @@ public class LinkedBag<T> implements BagInterface<T>
         return result;
     }
 
+    /**
+     * retrieves the node of the first occurence of a specified data point
+     * @param anEntry specified data
+     * @return first node containing that data
+     */
     private Node getReferenceTo(T anEntry)
     {
         Node<T> currentNode = firstNode;
@@ -83,12 +111,20 @@ public class LinkedBag<T> implements BagInterface<T>
         return false;
     }
 
+    /**
+     * clears all entries in this bag
+     */
     public void clear()
     {
         while (!isEmpty())
             remove();
     }
 
+    /**
+     * finds the frequency a specific piece of data occurs within the bag
+     * @param anEntry specified data 
+     * @return frequency of data
+     */
     public int getFrequencyOf(T anEntry)
     {
         int frequency = 0;
@@ -100,7 +136,12 @@ public class LinkedBag<T> implements BagInterface<T>
         }
         return frequency;
     }
-    
+
+    /**
+     * determines whether a specific piece of data is contained withing the bag
+     * @param anEntry the specified piece of data
+     * @return True if entry is contained, False otherwise
+     */
     public boolean contains(T anEntry)
     {
         Node<T> currentNode = firstNode;
@@ -111,7 +152,10 @@ public class LinkedBag<T> implements BagInterface<T>
         }
         return false;
     }
-
+    /**
+     * converts this LinkedBag to an Array of length numberOfEntries
+     * @return the array produced
+     */
     public T[] toArray()
     {
         @SuppressWarnings("unchecked")
@@ -177,6 +221,7 @@ public class LinkedBag<T> implements BagInterface<T>
                 continue;
             int thisFrequency = getFrequencyOf(thisData);
             int otherFrequency = other.getFrequencyOf(thisData);
+            
             while (newFrequency < Math.min(thisFrequency, otherFrequency))
             {
                 newBag.add(thisData);
@@ -219,6 +264,7 @@ public class LinkedBag<T> implements BagInterface<T>
         {
             this(data, null);
         }
+        
         private Node(U data, Node<U> nextNode)
         {
             this.data = data;
