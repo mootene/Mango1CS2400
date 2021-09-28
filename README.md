@@ -6,7 +6,7 @@ Updates to BagInterface to include union, intersection, difference done by Jibri
 ArrayBag and ArrayBagTest written by Jibriel  
 JavaDoc folder compiled by Jibriel
 
-Complexity Table produced by Johnny Garcia
+Complexity Table produced by Johnny 
 
 LinkedBag Javadoc page:C:/Users/Jibbers/Project/Javadoc/forlinkedbag/LinkedBag.html
 
