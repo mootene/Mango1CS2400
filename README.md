@@ -1,6 +1,6 @@
 Mango1CS2400
 ============
-Group members: Maya Tene, Jibriel Ustarz (jaustarz), Johnny Garcia  
+Group members: Maya Tene(mootene), Jibriel Ustarz (jaustarz), Johnny Garcia  
 LinkedBag and LinkedBagTest written by Maya  
 Updates to BagInterface to include union, intersection, difference done by Jibriel  
 ArrayBag and ArrayBagTest written by Jibriel  
